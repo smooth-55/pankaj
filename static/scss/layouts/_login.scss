@@ -1,0 +1,40 @@
+.auth-text {
+    color: var(--bs-theme-light);
+    font-size: 14px;
+    margin-bottom: 1.5rem;
+}
+
+.auth {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/login.jpg');
+    background-position: center center;
+    background-size: cover;
+    z-index: 0;
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        background: linear-gradient( 201deg, #91fb95, #009fde);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        opacity: .5;
+    }
+    &-block {
+        background: white;
+        border-radius: 5px;
+        padding: 1.75rem;
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .15);
+    }
+}
+
+@media (max-width:991px) {
+    .auth {
+        padding: 4rem 0;
+        height: auto;
+    }
+}

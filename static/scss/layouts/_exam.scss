@@ -1,0 +1,188 @@
+.exam {
+    background: url("../images/slider3.jpg") no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        background: linear-gradient( 201deg, #91fb95, #009fde);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        opacity: .8;
+    }
+    &-banner {
+        background: linear-gradient( 201deg, #91fb95, #009fde);
+    }
+    &-block {
+        background: white;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+        .tab-content {
+            min-height: 285px;
+        }
+    }
+    &-nav-tab {
+        border-bottom: 0;
+        background-color: var(--bs-title);
+        .nav-item {
+            .nav-link {
+                position: relative;
+                border: 0;
+                border-radius: 0;
+                margin-bottom: 0;
+                color: #ffffff;
+                padding: 0.75rem 1.5rem;
+                font-size: 0.9375rem;
+                font-weight: 400;
+                background-color: var(--bs-title);
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 0;
+                    height: 3px;
+                    display: block;
+                    right: 0;
+                    top: 0;
+                    background: var(--bs-theme-red);
+                    transition: width .3s ease;
+                    -webkit-transition: width .3s ease;
+                }
+                &:hover,
+                &:focus {
+                    border-color: none;
+                    &::after {
+                        width: 100%;
+                        left: 0;
+                        background: var(--bs-theme-red);
+                    }
+                }
+                &.active {
+                    color: var(--bs-theme-red);
+                    background-color: #ffffff;
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.entexam {
+    &-question {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--bs-theme-medium);
+        margin-bottom: 1.75rem;
+        border-bottom: 1px solid var(--bs-fade);
+        padding-bottom: .5rem;
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+    &-answer {
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--bs-theme-medium);
+        margin-bottom: 0.25rem;
+    }
+}
+
+.answer-list {
+    padding-left: 1.5rem;
+    li {
+        margin-bottom: 0.5rem;
+        max-width: 48%;
+        display: inline-block;
+        width: 300px;
+    }
+}
+
+@media (max-width:991px) {
+    .answer-list {
+        li {
+            width: 100%;
+            display: block;
+            max-width: 100%;
+        }
+    }
+}
+
+.sidebar-sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.sidebar-tab {
+    padding: 1rem;
+    //     box-shadow: -1px 1px 20px 6px rgba(204, 204, 204, 0.5);
+    &__title {
+        padding-left: 0.75rem;
+        border-left: 3px solid var(--bs-theme-green);
+        margin-bottom: 1rem;
+        color: var(--bs-title);
+    }
+}
+
+.timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: linear-gradient( 201deg, #91fb95, #009fde);
+    padding: .5rem;
+    border-radius: 6px;
+    .minutes,
+    .seconds {
+        font-size: 4.5rem;
+    }
+    .dot-size {
+        font-size: 2.5rem;
+        margin: 0 .75rem;
+    }
+}
+
+@media (max-width:991px) {
+    .timer {
+        .minutes,
+        .seconds {
+            font-size: 3rem;
+        }
+        .dot-size {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@media (max-width:767px) {
+    .sidebar-tab {
+        position: fixed;
+        top: 96px;
+        right: 0;
+        background: linear-gradient( 201deg, #91fb95, #009fde);
+        width: 200px;
+        border-radius: 12px 0 0 12px;
+        z-index: 2;
+        &__title {
+            background-color: white;
+            padding: .5rem;
+            border-radius: 6px;
+        }
+    }
+    .timer {
+        color: white;
+        background: none;
+        .minutes,
+        .seconds {
+            font-size: 1.75rem;
+        }
+        .dot-size {
+            font-size: 1rem;
+        }
+    }
+}

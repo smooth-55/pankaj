@@ -1,0 +1,14 @@
+.banner {
+    position: relative;
+    &__image {
+        @include overlay-bg;
+        background-image: url('../images/banner.jpg');
+        background-position: center;
+        background-size: cover;
+        z-index: -3;
+    }
+    &::before {
+        @include overlay-bg;
+        background-color: rgba(0, 29, 56, .8);
+    }
+}
